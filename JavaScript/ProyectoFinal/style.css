@@ -46,8 +46,7 @@ button:hover{
 }
 
 header{
-    background-color: rgb(245, 245, 245)
-
+    background-color: rgb(245, 245, 245);
 }
 
 header .logo{
@@ -55,7 +54,7 @@ header .logo{
     padding: 25px 30px; /* Vertical Horizontal*/
     font-weight: bold;
     font-size: 2em;
-    color: #000;
+    color:  #F5D1D1;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
@@ -267,4 +266,53 @@ footer .container{
     justify-content: center;
     align-items: flex-end;
 
+}
+
+
+@media (min-width: 720px){
+    header{
+        position: fixed;
+        width: 100%;
+    }
+
+
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    #somos-ibellas .container{
+        display: flex;
+        justify-content: center;
+    }
+
+    #somos-ibellas h2{
+        margin-top: 0px;
+    }
+
+    .somos-ibellas-text{
+        width: 50%;
+        max-width: 600px;
+        padding: 0px 30px;
+        text-align: initial;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+
+    #somos-ibellas .img-container{
+        background-image:url(/media/flor-de-loto.jpg);
+        background-size: cover;
+        background-position: center center;
+        height: 350px;
+        width: 250px;
+    }
 }
