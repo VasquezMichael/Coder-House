@@ -179,8 +179,8 @@ header a:hover{
     text-align: center;
     flex-direction: column;
     height: 70vh;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 150px;
+    margin-bottom: 150px;
     color: #fff;
     background-image: linear-gradient(
         0deg,
@@ -192,6 +192,62 @@ header a:hover{
     background-size: cover;
     background-position: center center;
 }
+
+
+
+#form-contact{
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+.form-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(245, 245, 245);
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 500px;
+    min-width: 300px;
+    border: 15px solid  #F5D1D1;
+    outline: 3px solid  #F5D1D1;
+}
+
+.form{
+    min-width: 300px;
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+    order: 5;
+    color: #000;
+}
+
+.form_imput:focus{
+    background: linear-gradient(to bottom,
+    transparent, rgb(161, 160, 160));
+    outline: none; 
+    border-bottom: 2px solid  #F5D1D1;
+}
+
+
+.form textarea{
+    min-height: 150px;
+    resize: none;
+}
+
+
+.form_imput{
+    width: 100%;
+    padding: 7px 0;
+    margin: 6px 0;
+    border: none;
+    border-bottom: 2px solid  #F5D1D1;
+    background: transparent;
+    color: #000;
+
+}
+
 
 
 
