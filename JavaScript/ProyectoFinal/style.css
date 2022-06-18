@@ -123,7 +123,10 @@ header a:hover{
 
 #nuestros-servicios .container{
     padding: 150px 12px;
+
 }
+
+
 
 #nuestros-servicios h2{
     margin-top: 0;
@@ -315,4 +318,15 @@ footer .container{
         height: 350px;
         width: 250px;
     }
+
+    #nuestros-servicios .servicios{
+        display: flex;
+        justify-content: center;
+    }  
+
+
+    #nuestros-servicios p{
+        display: block;
+    }
+
 }
