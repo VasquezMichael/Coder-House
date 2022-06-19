@@ -126,8 +126,6 @@ header a:hover{
 
 }
 
-
-
 #nuestros-servicios h2{
     margin-top: 0;
     font-size: 3.2em;
@@ -327,6 +325,19 @@ footer .container{
 
     #nuestros-servicios p{
         display: block;
+        margin-bottom: 30px;
+
     }
+
+    #nuestros-programas h3{
+        margin-top: 0;
+
+    }
+
+    #nuestros-servicios .carta{
+        padding: 30px;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+
 
 }
