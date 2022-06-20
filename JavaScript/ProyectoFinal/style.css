@@ -96,7 +96,7 @@ header a:hover{
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     )
-    ,url(./media/hero2.jpg);
+    ,url(/JavaScript/ProyectoFinal/media/hero2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -150,7 +150,7 @@ header a:hover{
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     )
-    ,url(/media/crio2.jpg);
+    ,url(/JavaScript/ProyectoFinal/media/crio2.jpg);
 }
 
 .carta:nth-child(2){
@@ -159,7 +159,7 @@ header a:hover{
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     )
-    ,url(/media/facial2.jpg);
+    ,url(/JavaScript/ProyectoFinal/media/facial2.jpg);
 }
 
 .carta:nth-child(3){
@@ -168,7 +168,7 @@ header a:hover{
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     )
-    ,url(/media/corporal.jpg);
+    ,url(/JavaScript/ProyectoFinal/media/corporal.jpg);
 }
 
 
@@ -187,7 +187,7 @@ header a:hover{
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     )
-    ,url(./media/turno.jpg);
+    ,url(/JavaScript/ProyectoFinal/media/turno.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -310,7 +310,7 @@ footer .container{
 
 
     #somos-ibellas .img-container{
-        background-image:url(/media/flor-de-loto.jpg);
+        background-image:url(/JavaScript/ProyectoFinal/media/flor-de-loto.jpg);
         background-size: cover;
         background-position: center center;
         height: 350px;
@@ -338,6 +338,4 @@ footer .container{
         padding: 30px;
         box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
     }
-
-
 }
