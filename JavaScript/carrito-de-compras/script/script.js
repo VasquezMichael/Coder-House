@@ -35,10 +35,17 @@ function addItemCarrito(newItem) {
     }
   }
 
+  const addAlert = document.querySelector('.addAlert');
+  setTimeout(() => {
+    addAlert.classList.add('addAlert');
+  }, 2000);
+  addAlert.classList.remove('addAlert');
+
   carrito.push(newItem);
   renderCarrito();
 }
 
+//Cargamos las cartas al carrito en forma dinamica
 function renderCarrito() {
   tbody.innerHTML = '';
   carrito.map((item) => {
@@ -62,6 +69,11 @@ function renderCarrito() {
     `;
     tr.innerHTML = content;
     tbody.appendChild(tr);
+    tr.querySelector('.delete').addEventListener('click', removeItemCarrito);
+    tr.querySelector('.Input-value').addEventListener(
+      'change',
+      modificarCantidad
+    );
   });
   precioTotal();
 }
@@ -76,7 +88,54 @@ function precioTotal() {
   });
 
   itemCartTotal.innerHTML = `Total $${total}`;
+  addLocalStorage();
 }
+
+function removeItemCarrito(e) {
+  const buttomDelete = e.target;
+  //obtenemos el componente padre del boton
+  const tr = buttomDelete.closest('.ItemCarrito');
+  const title = tr.querySelector('.title').textContent;
+  carrito.forEach((element) => {
+    if (element.title.trim() === title.trim()) {
+      carrito.splice(carrito.indexOf(element), 1);
+    }
+  });
+  tr.remove();
+  //Una vez que removemos un elemento devemos volver a calcular el total
+  precioTotal();
+
+  const removeAlert = document.querySelector('.removeAlert');
+  setTimeout(() => {
+    removeAlert.classList.add('removeAlert');
+  }, 2000);
+  removeAlert.classList.remove('removeAlert');
+}
+
+function modificarCantidad(e) {
+  const inputModificador = e.target;
+  const tr = inputModificador.closest('.ItemCarrito');
+  const title = tr.querySelector('.title').textContent;
+  carrito.forEach((element) => {
+    if (element.title.trim() === title.trim()) {
+      if (inputModificador.value < 1) inputModificador.value = 1;
+      element.cant = inputModificador.value;
+      precioTotal();
+    }
+  });
+}
+
+function addLocalStorage() {
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+window.onload = function () {
+  const storage = JSON.parse(localStorage.getItem('carrito'));
+  if (storage) {
+    carrito = storage;
+    renderCarrito();
+  }
+};
 
 /*buttomPay.addEventListener('click', () => {
   alert('Total a pagar: ' + total);

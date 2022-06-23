@@ -9,6 +9,20 @@ header{
     z-index: 100;
 }
 
+.alert{
+    z-index: 100;
+    position: sticky;
+    top: 0;
+}
+
+.addAlert , .removeAlert{
+    display: none;
+}
+
+
+
+
+
 .container-fluid{
     display: flex;
     background-color: rgb(26, 17, 17);
