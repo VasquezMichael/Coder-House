@@ -23,10 +23,14 @@ function addToCarritoItem(e) {
 }
 
 function addItemCarrito(newItem) {
+  const inputElement = tbody.getElementsByClassName('Input-value');
   for (let index = 0; index < carrito.length; index++) {
     if (carrito[index].title.trim() === newItem.title.trim()) {
       carrito[index].cant++;
-      console.log(carrito);
+      //const inputValue = inputElement[index];
+      // inputValue.value++;
+      inputElement[index].value++;
+      precioTotal();
       return null;
     }
   }
@@ -51,7 +55,7 @@ function renderCarrito() {
           <p>${item.price}</p>
       </td>
       <td class="table__cantidad">
-          <input type="number" min="1" value=${item.cant}>
+          <input type="number" min="1" value=${item.cant} class ="Input-value">
           <button class="delete btn btn-danger">x</button>
       </td>
     
@@ -59,6 +63,19 @@ function renderCarrito() {
     tr.innerHTML = content;
     tbody.appendChild(tr);
   });
+  precioTotal();
+}
+
+function precioTotal() {
+  let total = 0;
+  const itemCartTotal = document.querySelector('.itemCartTotal');
+  console.log(itemCartTotal);
+  carrito.forEach((element) => {
+    const precio = parseInt(element.price.replace('$', ''));
+    total = total + precio * element.cant;
+  });
+
+  itemCartTotal.innerHTML = `Total $${total}`;
 }
 
 /*buttomPay.addEventListener('click', () => {

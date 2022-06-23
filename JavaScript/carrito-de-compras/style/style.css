@@ -29,8 +29,17 @@ header{
 }
 
 .description:hover{
-    height: 80px;
+    height: 95px;
 }
+
+.container h2{
+    font-size: 2em;
+}
+
+.card{
+    margin-top: 25px;
+}
+
 
 .carrito{
     min-height: 70vh;
@@ -42,6 +51,7 @@ header{
 .table__productos{
     display: flex;
 }
+
 .table__productos > img{
     width: 9rem;
     object-fit: contain;
