@@ -1,16 +1,17 @@
 const butomsAdd = document.querySelectorAll('.button');
-const tbody = document.querySelector('.tbody');
+//const tbody = document.querySelector('.tbody');
 
-import { prueba } from './funciones';
-prueba();
+import { addToCarritoItem } from './funciones.js';
 
-let carrito = [];
+//let carrito = [];
 
 butomsAdd.forEach((element) => {
   element.addEventListener('click', addToCarritoItem);
 });
 
-function addToCarritoItem(e) {
+//TODO ESTE CODIGO LO PASE HACIA FUNCIONES.JS ademas de pasar el carrito y el tbody para el otro script
+
+/*function addToCarritoItem(e) {
   const button = e.target;
   const item = button.closest('.card');
   const itemTitle = item.querySelector('.card-title').textContent;
@@ -24,9 +25,9 @@ function addToCarritoItem(e) {
   };
 
   addItemCarrito(newItem);
-}
+}*/
 
-function addItemCarrito(newItem) {
+/*function addItemCarrito(newItem) {
   const inputElement = tbody.getElementsByClassName('Input-value');
   for (let index = 0; index < carrito.length; index++) {
     if (carrito[index].title.trim() === newItem.title.trim()) {
@@ -93,8 +94,9 @@ function precioTotal() {
 
   itemCartTotal.innerHTML = `Total $${total}`;
   addLocalStorage();
-}
+}*/
 
+/*
 function removeItemCarrito(e) {
   const buttomDelete = e.target;
   //obtenemos el componente padre del boton
@@ -127,8 +129,8 @@ function modificarCantidad(e) {
       precioTotal();
     }
   });
-}
-
+}*/
+/*
 function addLocalStorage() {
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
@@ -139,8 +141,4 @@ window.onload = function () {
     carrito = storage;
     renderCarrito();
   }
-};
-
-/*buttomPay.addEventListener('click', () => {
-  alert('Total a pagar: ' + total);
-});*/
+};*/
