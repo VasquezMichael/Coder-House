@@ -1,5 +1,9 @@
 const butomsAdd = document.querySelectorAll('.button');
 const tbody = document.querySelector('.tbody');
+
+import { prueba } from './funciones';
+prueba();
+
 let carrito = [];
 
 butomsAdd.forEach((element) => {

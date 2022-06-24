@@ -7,11 +7,10 @@
     <title>Mi tienda</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
-
     <link rel="stylesheet" href="/style/style.css">
 </head>
 <body>
+    <!-- Aqui tenemos el nav que usaremos para desplazarnos entre las opciones home, productos y carrito-->
     <header class="container-fluid">
         <ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -52,6 +51,7 @@
         </ul>
     </header>
 
+    
     <div class="alert container alert-primary addAlert " role="alert">
         Producto añadido al carrito!
     </div>
@@ -59,6 +59,7 @@
         Producto eliminado del carrito!
     </div>
 
+    <!--Aqui le damos funcionalidad a cada una de las secciones del nav. La primera aun esta vacia, es el home y podemos modificarla luego-->
     <div class="tab-content" id="pills-tabContent">
         <div 
             class="tab-pane fade " 
@@ -69,13 +70,14 @@
             1
         </div>
 
+        <!--Aqui inicia la seccion de productos -->
         <div 
             class="tab-pane fade show active container" 
             id="pills-profile" r
             ole="tabpanel" 
             aria-labelledby="pills-profile-tab"
-        > <!--CARTAS-->
-
+        > 
+        <!--CARTAS-->
             <h2 class="h4 m-4 text-primary">Productos</h2>
             
             <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
@@ -211,6 +213,7 @@
             </div>            
         </div>
         
+        <!--Aqui inicia la seccion del carrito-->
         <div 
             class="tab-pane fade carrito" 
             id="pills-contact" 
@@ -258,69 +261,10 @@
     </footer>
 
 
-
-
-
-
-
-
-
-
-
-
-<!--
- <div class="page-content">
-        <div class="product-container">
-            <h3 class="card-title">Explorer 1</h3>
-            <img src="/media/explorer1.jpg" class = "card-img"  />
-            <h2 class="price">500</h2>
-            <button id ="1" class="button-add">Agregar</button>
-        </div>
-
-        <div class="product-container">
-            <h3 class="card-title">Explorer 2</h3>
-            <img src="/media/explorer2.jpg" class = "card-img"  />
-            <h2 class="price" >$500</h2>
-            <button id ="2" class="button-add">Agregar</button>
-        </div>
-
-        <div class="product-container">
-            <h3 class="card-title">Explorer 3</h3>
-            <img src="/media/explorer3.jpg" class = "card-img"  />
-            <h2 class="price">500</h2>
-            <button id ="3" class="button-add">Agregar</button>
-        </div>
-
-        <div class="product-container">
-            <h3 class="card-title">Explorer 4</h3>
-            <img src="/media/explorer4.jpg" class = "card-img"  />
-            <h2 class="price">500</h2>
-            <button id ="4" class="button-add">Agregar</button>
-        </div>
-
-        <div class="product-container">
-            <h3 class="card-title">Perpetual</h3>
-            <img src="/media/perpetual.jpg" class = "card-img"  />
-            <h2 class="price">500</h2>
-            <button id ="5" class="button-add">Agregar</button>
-        </div>
-
-        <div class="product-container">
-            <h3 class="card-title">Quartz</h3>
-            <img src="/media/quartz.jpg" class = "card-img"  />
-            <h2 class="price">500</h2>
-            <button id ="6" class="button-add">Agregar</button>
-        </div>
-    </div>
--->
-   
-
-
-
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="/script/script.js"></script>
+    <script src="/script/script.js" type="module" ></script>
 </body>
 
 </html>
