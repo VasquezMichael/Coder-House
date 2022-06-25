@@ -36,6 +36,15 @@ header{
     padding: 4px;
 }
 
+.img-card{
+    transition: 1s
+}
+
+.img-card:hover{
+    transition: 1s;
+    transform: scale(1.2);
+}
+
 .description{
     height: 25px;
     overflow: hidden;
@@ -81,6 +90,22 @@ header{
     font-weight: 700;
     margin-right: 30px;
     margin-bottom: 20px;
+}
+
+.modal-body input{
+    margin: 3px;
+}
+
+.container-pay{
+    display: flex;
+    text-align: center center;
+    justify-content: center;
+}
+
+.container-pay .btn{
+    width: 100%;
+    margin: 5px;
+    
 }
 
 .footer_class{

@@ -68,6 +68,7 @@
             aria-labelledby="pills-home-tab"
             >
             1
+
         </div>
 
         <!--Aqui inicia la seccion de productos -->
@@ -85,7 +86,7 @@
                 <div class="col d-flex justify-content-center-mb-4">
                     <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
                         <h5 class="card-title pt-2 text-center text-primary">Explorer 1</h5>
-                        <img src="/media/explorer1.jpg" class="card-img-top" alt="...">
+                        <img src="/media/explorer1.jpg" class="card-img-top img-card" alt="...">
                         <div class="card-body  ">
                             
                             <p class="card-text description text-white-50" >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -101,7 +102,7 @@
                 <div class="col d-flex justify-content-center-mb-4">
                     <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
                         <h5 class="card-title pt-2 text-center text-primary">Explorer 2</h5>
-                        <img src="/media/explorer2.jpg" class="card-img-top" alt="...">
+                        <img src="/media/explorer2.jpg" class="card-img-top img-card" alt="...">
                         <div class="card-body  ">
                             
                             <p class="card-text description text-white-50" >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -117,7 +118,7 @@
                 <div class="col d-flex justify-content-center-mb-4">
                     <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
                         <h5 class="card-title pt-2 text-center text-primary">Explorer 3</h5>
-                        <img src="/media/explorer3.jpg" class="card-img-top" alt="...">
+                        <img src="/media/explorer3.jpg" class="card-img-top img-card" alt="...">
                         <div class="card-body  ">
                             
                             <p class="card-text description text-white-50" >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -133,7 +134,7 @@
                 <div class="col d-flex justify-content-center-mb-4">
                     <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
                         <h5 class="card-title pt-2 text-center text-primary">Day Date 40</h5>
-                        <img src="/media/day-date40.jpg" class="card-img-top" alt="...">
+                        <img src="/media/day-date40.jpg" class="card-img-top img-card" alt="...">
                         <div class="card-body  ">
                             
                             <p class="card-text description text-white-50" >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -149,7 +150,7 @@
                 <div class="col d-flex justify-content-center-mb-4">
                     <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
                         <h5 class="card-title pt-2 text-center text-primary">Air King</h5>
-                        <img src="/media/air-king.jpg" class="card-img-top" alt="...">
+                        <img src="/media/air-king.jpg" class="card-img-top img-card" alt="...">
                         <div class="card-body  ">
                             
                             <p class="card-text description text-white-50" >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -165,7 +166,7 @@
                 <div class="col d-flex justify-content-center-mb-4">
                     <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
                         <h5 class="card-title pt-2 text-center text-primary">Cellini Moonphase</h5>
-                        <img src="/media/cellini.jpg" class="card-img-top" alt="...">
+                        <img src="/media/cellini.jpg" class="card-img-top img-card" alt="...">
                         <div class="card-body  ">
                             
                             <p class="card-text description text-white-50" >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -181,7 +182,7 @@
                 <div class="col d-flex justify-content-center-mb-4">
                     <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
                         <h5 class="card-title pt-2 text-center text-primary">Yacht Master 40</h5>
-                        <img src="/media/yacht-master-40.jpg" class="card-img-top" alt="...">
+                        <img src="/media/yacht-master-40.jpg" class="card-img-top img-card" alt="...">
                         <div class="card-body  ">
                             
                             <p class="card-text description text-white-50" >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -197,7 +198,7 @@
                 <div class="col d-flex justify-content-center-mb-4">
                     <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
                         <h5 class="card-title pt-2 text-center text-primary">Submariner</h5>
-                        <img src="/media/submariner.jpg" class="card-img-top" alt="...">
+                        <img src="/media/submariner.jpg" class="card-img-top img-card" alt="...">
                         <div class="card-body  ">
                             
                             <p class="card-text description text-white-50" >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -245,7 +246,69 @@
                 <h3 class="itemCartTotal">Total: 0</h3>
                 <div>
                     <div class="col d-flex justify-content-end">
-                        <button class="btn btn-success">Comprar</button>
+                       <!--<button class="btn btn-success">Comprar</button>--> 
+                        <!--Lo siguiente se ejecutara cada vez que apretemos el boton comprar--> 
+                        <button type="button" class="btn btn-success button-buy" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Comprar</button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title text-primary" id="exampleModalLabel">Confirmacion del pedido</h4>
+                                        
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+  
+                                        <form>
+                                        <div class="mb-3">
+                                            <h5 class="modal-title text-primary" id="exampleModalLabel">Mis datos</h5>
+                                            <span >Nombre</span>
+                                            <input type="text" class="form-control" id="recipient-name" placeholder="Nombre:">
+                                            <span>Direccion</span>
+                                            <input type="text" class="form-control" id="recipient-name" placeholder="Direccion:">
+                                            <span>Telefono</span>
+                                            <input type="tel" name="phone" class="form-control" id="recipient-name" placeholder="(+54)">
+                                            <span>Metodo de pago</span> <br>
+                                            <div class="container-pay">
+                                                <a class="btn btn-secondary " data-bs-toggle="collapse" href="#pay-efectivo" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                    Efectivo
+                                                </a>
+                                                <button class="btn btn-secondary button-pay-tarjeta" type="button" data-bs-toggle="collapse" data-bs-target="#pay-tarjeta" aria-expanded="false" aria-controls="collapseExample">
+                                                    Tarjeta
+                                                </button>
+                                            </div>
+
+                                            
+                                            <div class="collapse" id="pay-efectivo">
+                                                <div class="card card-body">
+                                                    <span>¿Con cuánto abonas?</span>
+                                                    <input type="number" class="form-control" id="recipient-name" placeholder="Con cuánto abonas:"><br>
+                                                </div>
+                                            </div>
+                                            <div class="collapse" id="pay-tarjeta">
+                                                <div class="card card-body">
+                                                <span>Encontrarás el link de pago junto a tu pedido en el mensaje de WhatsApp!</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="message-text" class="col-form-label">¿Queres aclarar algo?</label>
+                                            <textarea class="form-control" id="message-text"></textarea>
+                                        </div>
+                                        </form>
+                                        <span>Detalles de la compra</span> <br><br>
+                                        <div class="resumen">
+                                            <p class="resumenCompra">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab tempora amet sed unde cum. </p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-success button-realizar-pedido">Realizar pedido</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
                     </div>
                 </div>
             </div>

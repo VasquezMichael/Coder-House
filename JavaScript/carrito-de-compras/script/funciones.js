@@ -1,4 +1,5 @@
 const tbody = document.querySelector('.tbody');
+const modalBody = document.querySelector('.modal-body');
 let carrito = [];
 
 const addToCarritoItem = (e) => {
@@ -33,7 +34,7 @@ function addItemCarrito(newItem) {
   const addAlert = document.querySelector('.addAlert');
   setTimeout(() => {
     addAlert.classList.add('addAlert');
-  }, 2000);
+  }, 1000);
   addAlert.classList.remove('addAlert');
 
   carrito.push(newItem);
@@ -102,7 +103,7 @@ function removeItemCarrito(e) {
   const removeAlert = document.querySelector('.removeAlert');
   setTimeout(() => {
     removeAlert.classList.add('removeAlert');
-  }, 2000);
+  }, 1000);
   removeAlert.classList.remove('removeAlert');
 }
 
@@ -123,6 +124,29 @@ function addLocalStorage() {
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
+function armarStringResumen() {
+  resumen = resumen + document.querySelector('.itemCartTotal').innerHTML;
+  return resumen;
+}
+
+const armarResumen = () => {
+  const mostrarResumen = modalBody.querySelector('.resumen');
+
+  mostrarResumen.innerHTML = '';
+  carrito.forEach((element) => {
+    const p = document.createElement('p');
+    const resumen = `
+        <p>${element.cant}x ${element.title} <br> </p>
+    `;
+    p.innerHTML = resumen;
+    mostrarResumen.appendChild(p);
+  });
+  const montoTotal = document.createElement('p');
+  montoTotal.innerHTML =
+    '<hr>' + document.querySelector('.itemCartTotal').innerHTML;
+  mostrarResumen.appendChild(montoTotal);
+};
+
 window.onload = function () {
   const storage = JSON.parse(localStorage.getItem('carrito'));
   if (storage) {
@@ -131,4 +155,4 @@ window.onload = function () {
   }
 };
 
-export { addToCarritoItem };
+export { addToCarritoItem, armarResumen };
