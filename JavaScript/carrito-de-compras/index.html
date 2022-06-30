@@ -270,22 +270,22 @@
                                             <input type="tel" name="phone" class="form-control" id="recipient-name" placeholder="(+54)">
                                             <span>Metodo de pago</span> <br>
                                             <div class="container-pay">
-                                                <a class="btn btn-secondary " data-bs-toggle="collapse" href="#pay-efectivo" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <button class="btn btn-secondary button-pay-efectivo" type="button" data-bs-toggle="collapse" data-bs-target=".pay-efectivo" aria-expanded="false" aria-controls="collapseExample">
                                                     Efectivo
-                                                </a>
-                                                <button class="btn btn-secondary button-pay-tarjeta" type="button" data-bs-toggle="collapse" data-bs-target="#pay-tarjeta" aria-expanded="false" aria-controls="collapseExample">
+                                                </button>
+                                                <button class="btn btn-secondary button-pay-tarjeta" type="button" data-bs-toggle="collapse" data-bs-target=".pay-tarjeta" aria-expanded="false" aria-controls="collapseExample">
                                                     Tarjeta
                                                 </button>
                                             </div>
 
                                             
-                                            <div class="collapse" id="pay-efectivo">
+                                            <div class="collapse pay-efectivo">
                                                 <div class="card card-body">
                                                     <span>¿Con cuánto abonas?</span>
                                                     <input type="number" class="form-control" id="recipient-name" placeholder="Con cuánto abonas:"><br>
                                                 </div>
                                             </div>
-                                            <div class="collapse" id="pay-tarjeta">
+                                            <div class="collapse pay-tarjeta">
                                                 <div class="card card-body">
                                                 <span>Encontrarás el link de pago junto a tu pedido en el mensaje de WhatsApp!</span>
                                                 </div>

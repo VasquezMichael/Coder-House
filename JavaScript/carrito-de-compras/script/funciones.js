@@ -1,5 +1,7 @@
 const tbody = document.querySelector('.tbody');
 const modalBody = document.querySelector('.modal-body');
+const buttonEfectivo = document.querySelector('.button-pay-efectivo');
+const buttonTarjeta = document.querySelector('.button-pay-tarjeta');
 let carrito = [];
 
 const addToCarritoItem = (e) => {
@@ -146,6 +148,23 @@ const armarResumen = () => {
     '<hr>' + document.querySelector('.itemCartTotal').innerHTML;
   mostrarResumen.appendChild(montoTotal);
 };
+
+//Manejador de eventos para los botones de Efectivo y Tarjeta
+buttonEfectivo.addEventListener('click', () => {
+  Object.values(buttonEfectivo.classList).includes('btn-success')
+    ? (buttonEfectivo.classList.remove('btn-success'),
+      buttonEfectivo.classList.add('btn-secondary'))
+    : (buttonEfectivo.classList.remove('btn-secondary'),
+      buttonEfectivo.classList.add('btn-success'));
+});
+
+buttonTarjeta.addEventListener('click', () => {
+  Object.values(buttonTarjeta.classList).includes('btn-success')
+    ? (buttonTarjeta.classList.remove('btn-success'),
+      buttonTarjeta.classList.add('btn-secondary'))
+    : (buttonTarjeta.classList.remove('btn-secondary'),
+      buttonTarjeta.classList.add('btn-success'));
+});
 
 window.onload = function () {
   const storage = JSON.parse(localStorage.getItem('carrito'));
