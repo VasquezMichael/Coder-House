@@ -33,12 +33,14 @@ function addItemCarrito(newItem) {
     }
   }
 
-  const addAlert = document.querySelector('.addAlert');
-  setTimeout(() => {
-    addAlert.classList.add('addAlert');
-  }, 1000);
-  addAlert.classList.remove('addAlert');
-
+  Toastify({
+    text: 'Producto añadido al carrito',
+    className: 'info',
+    duration: 1000,
+    style: {
+      background: 'linear-gradient(to right, #00b09b, #96c93d)',
+    },
+  }).showToast();
   carrito.push(newItem);
   renderCarrito();
 }
@@ -102,11 +104,15 @@ function removeItemCarrito(e) {
   //Una vez que removemos un elemento devemos volver a calcular el total
   precioTotal();
 
-  const removeAlert = document.querySelector('.removeAlert');
-  setTimeout(() => {
-    removeAlert.classList.add('removeAlert');
-  }, 1000);
-  removeAlert.classList.remove('removeAlert');
+  Toastify({
+    text: 'Producto removido del carrito',
+    className: 'info',
+    duration: 1000,
+    style: {
+      background:
+        'linear-gradient(275deg, rgba(2,0,36,1) 0%, rgba(8,9,9,1) 0%, rgba(133,47,21,1) 60%, rgba(18,19,19,1) 98%)',
+    },
+  }).showToast();
 }
 
 function modificarCantidad(e) {
@@ -150,6 +156,44 @@ const armarResumen = () => {
 };
 
 //Manejador de eventos para los botones de Efectivo y Tarjeta
+
+buttonEfectivo.addEventListener('click', () => {
+  if (Object.values(buttonTarjeta.classList).includes('btn-success')) {
+    buttonTarjeta.classList.remove('btn-success');
+    buttonTarjeta.classList.add('btn-secondary');
+  }
+  Object.values(buttonEfectivo.classList).includes('btn-success')
+    ? (buttonEfectivo.classList.remove('btn-success'),
+      buttonEfectivo.classList.add('btn-secondary'))
+    : (buttonEfectivo.classList.remove('btn-secondary'),
+      buttonEfectivo.classList.add('btn-success'),
+      (document.querySelector('.method-pay').innerHTML = ''),
+      (document.querySelector('.method-pay').innerHTML = `
+      <div class="card card-body">
+      <span>¿Con cuánto abonas?</span>
+      <input type="number" class="form-control" id="recipient-name" placeholder="Con cuánto abonas:"><br>
+      </div>`));
+});
+
+buttonTarjeta.addEventListener('click', () => {
+  if (Object.values(buttonEfectivo.classList).includes('btn-success')) {
+    buttonEfectivo.classList.remove('btn-success');
+    buttonEfectivo.classList.add('btn-secondary');
+  }
+
+  Object.values(buttonTarjeta.classList).includes('btn-success')
+    ? (buttonTarjeta.classList.remove('btn-success'),
+      buttonTarjeta.classList.add('btn-secondary'))
+    : (buttonTarjeta.classList.remove('btn-secondary'),
+      buttonTarjeta.classList.add('btn-success'),
+      (document.querySelector('.method-pay').innerHTML = ''),
+      (document.querySelector('.method-pay').innerHTML = `
+      <div class="card card-body">
+       <span>Encontrarás el link de pago junto a tu pedido en el mensaje de WhatsApp!</span>
+      </div>`));
+});
+
+/*
 buttonEfectivo.addEventListener('click', () => {
   Object.values(buttonEfectivo.classList).includes('btn-success')
     ? (buttonEfectivo.classList.remove('btn-success'),
@@ -164,7 +208,7 @@ buttonTarjeta.addEventListener('click', () => {
       buttonTarjeta.classList.add('btn-secondary'))
     : (buttonTarjeta.classList.remove('btn-secondary'),
       buttonTarjeta.classList.add('btn-success'));
-});
+});*/
 
 window.onload = function () {
   const storage = JSON.parse(localStorage.getItem('carrito'));
