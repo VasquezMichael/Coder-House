@@ -1,12 +1,13 @@
 body {
     margin: 0px;
-    background-color: aliceblue;
-    font-family: 'Nerko One', cursive;
+    background-color: rgb(23, 23, 27);
+    font-family: 'Playfair Display', serif;
 }
 
 
 header{
     z-index: 100;
+    opacity: 0.95;
 }
 
 .alert{
@@ -31,7 +32,21 @@ textarea{
     position: sticky;
     top: 0;
     height: 50px;
+    text-align: center;
     justify-content: center;
+}
+
+.card-container{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.video-prod{
+    display: flex;
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .nav{
@@ -71,6 +86,10 @@ textarea{
     max-width: 1000px;
     margin: 0 auto;
     width: 100%;
+}
+
+.itemCartTotal{
+    color: #fff;
 }
 
 .table__productos{
@@ -113,75 +132,3 @@ textarea{
 .footer_class{
     margin-top: 50px;
 }
-
-
-
-
-
-/*
-button {
-    font-size: 16px;
-    text-align: center;
-    border-radius: 8px;
-    padding: 10px 20px;
-}
-
-
-
-
-.button-pay {
-    background-color: white;
-    color: black;
-    border: 2px solid #008CBA; 
-    transition-duration: 0.4s;
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
-}
-
-.button-pay:hover {
-    background-color: #008CBA; 
-    color: white;
-}
-
-.page-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.product-container {
-    margin: 15px;
-    padding: 2px 16px;
-    position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
-    background-color: white;
-}
-
-.product-container:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-
-.product-container img {
-    width: 300px;
-}
-
-.product-container h1 {
-    margin-bottom: 10px;
-    margin-left: 15px;
-}
-
-.button-add {
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50; 
-    transition-duration: 0.4s;
-    position: absolute;
-    right: 15px;
-    bottom: 10px;
-}
-  
-.button-add:hover {
-    background-color: #4CAF50; 
-    color: white;
-}*/

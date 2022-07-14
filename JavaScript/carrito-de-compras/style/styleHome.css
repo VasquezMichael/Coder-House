@@ -1,0 +1,30 @@
+.header-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center center;
+    color: #000;
+    height: 92vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    )
+    ,url("../media/headerHome2.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center center;
+
+
+}
+.textHeader{
+    margin-top: 220px;
+}
+
+
+.sobreMi .container{
+    padding: 150px 12px;
+    text-align: center;
+    color: rgb(184, 180, 180);
+}

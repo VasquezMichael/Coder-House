@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/styleHome.css">
 </head>
 <body>
     <!-- Aqui tenemos el nav que usaremos para desplazarnos entre las opciones home, productos y carrito-->
@@ -17,7 +18,7 @@
         <ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
                 <a 
-                class="nav-link " id="pills-home-tab" 
+                class="nav-link  active " id="pills-home-tab" 
                 data-bs-toggle="pill" 
                 data-bs-target="#pills-home" type="button"
                 role="tab" 
@@ -28,7 +29,7 @@
 
             <li class="nav-item" role="presentation">
                 <a 
-                class="nav-link active" 
+                class="nav-link" 
                 id="pills-profile-tab" 
                 data-bs-toggle="pill" 
                 data-bs-target="#pills-profile"
@@ -55,29 +56,45 @@
     <!--Aqui le damos funcionalidad a cada una de las secciones del nav. La primera aun esta vacia, es el home y podemos modificarla luego-->
     <div class="tab-content" id="pills-tabContent">
         <div 
-            class="tab-pane fade " 
+            class="tab-pane fade show active" 
             id="pills-home" 
             role="tabpanel" 
             aria-labelledby="pills-home-tab"
             >
-            1
+            <header class="header-home">
+                <div class="textHeader">
+                    <br><h5>Hola,</h5>
+                    <h1>Soy Michael.</h1><br>
+                    <h4>Programador Jr <br> y Tecnico electronico</h4>
+                </div>
+            </header>
+
+            <header class="sobreMi">
+                <div class="container">
+                    <div class="img-container"></div>
+                    <div class="sobreMi-text">
+                        <h2>Sobre Mí</h2>
+                        <p>Soy programador Junior, me recibi de tecnico electronico en la secudaria donde adquirí, entre otras cosas, conocimientos basicos de programación. <br> Estudié hasta segundo año de Licenciatura en Sistemas en la UNLP. Actualmente decidí enfocarme en estudiar desarrollo web y formarme como Desarrollador full Stack</p>
+                    </div>
+                </div>
+            </header>
 
         </div>
 
         <!--Aqui inicia la seccion de productos -->
+        
         <div 
-            class="tab-pane fade show active container" 
-            id="pills-profile" r
+            class="tab-pane fade" 
+            id="pills-profile"
             ole="tabpanel" 
             aria-labelledby="pills-profile-tab"
-        > 
-        
+        >
+         <video src="https://content.rolex.com/dam/new-watches-2020/new-submariner/videos/cover/new-submariner-video-cover.mp4" type="video/mp4" autoplay="" playsinline="" loop="" preload="auto" class="video-prod"></video>
             <h2 class="h4 m-4 text-primary">Productos</h2>
         <!--CARTAS-->    
-            <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 card-container">
+            <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 card-container ">
                 <!--Las cartas se renderizan desde el ajax.js-->
             </div>    
-            
             
         </div>
         
@@ -110,7 +127,7 @@
           <br><br>
           <div class="row mx-4">
             <div class="col">
-                <h3 class="itemCartTotal">Total: 0</h3>
+                <h3 class="itemCartTotal"></h3>
                 <div>
                     <div class="col d-flex justify-content-end">
                        <!--<button class="btn btn-success">Comprar</button>--> 
