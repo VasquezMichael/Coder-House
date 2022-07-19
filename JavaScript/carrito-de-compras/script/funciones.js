@@ -193,23 +193,6 @@ buttonTarjeta.addEventListener('click', () => {
       </div>`));
 });
 
-/*
-buttonEfectivo.addEventListener('click', () => {
-  Object.values(buttonEfectivo.classList).includes('btn-success')
-    ? (buttonEfectivo.classList.remove('btn-success'),
-      buttonEfectivo.classList.add('btn-secondary'))
-    : (buttonEfectivo.classList.remove('btn-secondary'),
-      buttonEfectivo.classList.add('btn-success'));
-});
-
-buttonTarjeta.addEventListener('click', () => {
-  Object.values(buttonTarjeta.classList).includes('btn-success')
-    ? (buttonTarjeta.classList.remove('btn-success'),
-      buttonTarjeta.classList.add('btn-secondary'))
-    : (buttonTarjeta.classList.remove('btn-secondary'),
-      buttonTarjeta.classList.add('btn-success'));
-});*/
-
 window.onload = function () {
   const storage = JSON.parse(localStorage.getItem('carrito'));
   if (storage) {

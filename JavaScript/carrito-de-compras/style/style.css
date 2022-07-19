@@ -36,10 +36,14 @@ textarea{
     justify-content: center;
 }
 
-.card-container{
-    display: flex;
+.productos h2{
     text-align: center;
-    justify-content: center;
+    font-size: 2.5em;
+    color: burlywood;
+}
+
+.card-container{
+    padding: 63px;
 }
 
 .video-prod{
@@ -132,3 +136,4 @@ textarea{
 .footer_class{
     margin-top: 50px;
 }
+
