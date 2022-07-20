@@ -7,11 +7,11 @@ function armarHtml(productos) {
     const { title, price, description, url } = element;
     div.innerHTML = `
       <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
-        <h5 class="card-title pt-2 text-center text-primary">${title}</h5>
+        <h5 class="card-title pt-2 text-center">${title}</h5>
         <img src="${url}" class="card-img-top img-card" alt="...">
         <div class="card-body  "> 
           <p class="card-text description text-white-50" >${description}</p>
-          <h5 class="text-primary">Precio: <span class="precio">${price}</span></h5>
+          <h5>Precio: <span class="precio">${price}</span></h5>
           <div class="d-grid gap-2">
               <button class="btn btn-primary button">Añadir al carrito</a>
           </div>   

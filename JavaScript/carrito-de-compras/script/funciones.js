@@ -22,17 +22,6 @@ const addToCarritoItem = (e) => {
 
 function addItemCarrito(newItem) {
   const inputElement = tbody.getElementsByClassName('Input-value');
-  for (let index = 0; index < carrito.length; index++) {
-    if (carrito[index].title.trim() === newItem.title.trim()) {
-      carrito[index].cant++;
-      //const inputValue = inputElement[index];
-      // inputValue.value++;
-      inputElement[index].value++;
-      precioTotal();
-      return null;
-    }
-  }
-
   Toastify({
     text: 'Producto añadido al carrito',
     className: 'info',
@@ -41,6 +30,16 @@ function addItemCarrito(newItem) {
       background: 'linear-gradient(to right, #00b09b, #96c93d)',
     },
   }).showToast();
+
+  for (let index = 0; index < carrito.length; index++) {
+    if (carrito[index].title.trim() === newItem.title.trim()) {
+      carrito[index].cant++;
+      inputElement[index].value++;
+      precioTotal();
+      return null;
+    }
+  }
+
   carrito.push(newItem);
   renderCarrito();
 }
@@ -51,7 +50,6 @@ function renderCarrito() {
     const tr = document.createElement('tr');
     tr.classList.add('ItemCarrito');
     const content = `
-  
         <th scope="row">1</th>
         <td class="table__productos">
             <img src=${item.img} alt="">

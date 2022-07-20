@@ -8,9 +8,10 @@ body {
 header{
     z-index: 100;
     opacity: 0.95;
+    
 }
 
-.alert{
+/*.alert{
     z-index: 100;
     position: sticky;
     top: 0px;
@@ -18,7 +19,7 @@ header{
 
 .addAlert , .removeAlert{
     display: none;
-}
+}*/
 
 textarea{
     max-height: 80px;
@@ -35,15 +36,33 @@ textarea{
     text-align: center;
     justify-content: center;
 }
+.nav{
+    border: 0;
+}
+.nav a{
+    color:burlywood; 
+}
+
+.nav a:hover{
+    color: burlywood; 
+}
+
+
 
 .productos h2{
     text-align: center;
-    font-size: 2.5em;
+    font-size: 3em;
     color: burlywood;
+    margin: 0;
 }
 
 .card-container{
     padding: 63px;
+    padding-top: 20px;
+}
+
+.card h5{
+    color: burlywood;
 }
 
 .video-prod{
@@ -73,7 +92,7 @@ textarea{
 }
 
 .description:hover{
-    height: 95px;
+    height: 110px;
 }
 
 .container h2{
@@ -92,8 +111,12 @@ textarea{
     width: 100%;
 }
 
+.tr-carrito{
+    color: burlywood;
+}
+
 .itemCartTotal{
-    color: #fff;
+    color: burlywood;
 }
 
 .table__productos{

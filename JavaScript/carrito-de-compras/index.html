@@ -15,10 +15,11 @@
     <!-- Aqui tenemos el nav que usaremos para desplazarnos entre las opciones home, productos y carrito-->
     <header class="container-fluid">
         <ToastContainer />
-        <ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a 
-                class="nav-link  active " id="pills-home-tab" 
+        <ul class="nav nav-tabs mb-3 " id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation" id="CA">
+                <a
+                id = "aca"
+                class="nav-link active" id="pills-home-tab" 
                 data-bs-toggle="pill" 
                 data-bs-target="#pills-home" type="button"
                 role="tab" 
@@ -27,7 +28,7 @@
                 Home</a>
             </li>
 
-            <li class="nav-item" role="presentation">
+            <li class="nav-item " role="presentation">
                 <a 
                 class="nav-link" 
                 id="pills-profile-tab" 
@@ -62,7 +63,7 @@
             aria-labelledby="pills-home-tab"
             >
             <section class="Soy-michael">
-                <div class="textHeader">
+                <div class="textHero">
                     <br><h4>Hola,</h4>
                     <h2>Soy Michael.</h2><br>
                     <h4>Programador Jr <br> y Tecnico electronico</h4>
@@ -121,7 +122,7 @@
             aria-labelledby="pills-profile-tab"
         >
             <video src="https://content.rolex.com/dam/new-watches-2020/new-submariner/videos/cover/new-submariner-video-cover.mp4" type="video/mp4" autoplay="" playsinline="" loop="true" preload="auto" class="video-prod"></video>
-            <h2 class="h4 m-4">Productos</h2>
+            <h2 class="h4 mt-5">Productos</h2>
         <!--CARTAS-->    
             <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 card-container ">
                 <!--Las cartas se renderizan desde el fetch.js-->
@@ -141,7 +142,7 @@
         <br>
         <table class="table table-dark table-striped">
             <thead>
-              <tr class="text-primary">
+              <tr class="tr-carrito">
                 <th scope="col">#</th>
                 <th scope="col">Productos</th>
                 <th scope="col">Precio</th>
@@ -161,7 +162,6 @@
                 <h3 class="itemCartTotal"></h3>
                 <div>
                     <div class="col d-flex justify-content-end">
-                       <!--<button class="btn btn-success">Comprar</button>--> 
                         <!--Lo siguiente se ejecutara cada vez que apretemos el boton comprar--> 
                         <button type="button" class="btn btn-success button-buy" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Comprar</button>
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
