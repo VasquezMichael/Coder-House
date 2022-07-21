@@ -2,6 +2,7 @@ const tbody = document.querySelector('.tbody');
 const modalBody = document.querySelector('.modal-body');
 const buttonEfectivo = document.querySelector('.button-pay-efectivo');
 const buttonTarjeta = document.querySelector('.button-pay-tarjeta');
+
 let carrito = [];
 
 const addToCarritoItem = (e) => {
@@ -130,23 +131,30 @@ function addLocalStorage() {
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-function armarStringResumen() {
-  resumen = resumen + document.querySelector('.itemCartTotal').innerHTML;
-  return resumen;
+function armarElementsResumen(mostrarResumen) {
+  carrito.forEach((element) => {
+    const p = document.createElement('p');
+    const resumen = `
+        <p class="resumenCompra">${element.cant}x ${element.title}  </p>
+    `;
+    p.innerHTML = resumen;
+    mostrarResumen.appendChild(p);
+  });
 }
 
 const armarResumen = () => {
   const mostrarResumen = modalBody.querySelector('.resumen');
 
   mostrarResumen.innerHTML = '';
-  carrito.forEach((element) => {
+  /* carrito.forEach((element) => {
     const p = document.createElement('p');
     const resumen = `
-        <p>${element.cant}x ${element.title} <br> </p>
+        <p class="resumenCompra">${element.cant}x ${element.title}  </p>
     `;
     p.innerHTML = resumen;
     mostrarResumen.appendChild(p);
-  });
+  });*/
+  armarElementsResumen(mostrarResumen);
   const montoTotal = document.createElement('p');
   montoTotal.innerHTML =
     '<hr>' + document.querySelector('.itemCartTotal').innerHTML;
@@ -156,10 +164,12 @@ const armarResumen = () => {
 //Manejador de eventos para los botones de Efectivo y Tarjeta
 
 buttonEfectivo.addEventListener('click', () => {
+  realizarPedido();
   if (Object.values(buttonTarjeta.classList).includes('btn-success')) {
     buttonTarjeta.classList.remove('btn-success');
     buttonTarjeta.classList.add('btn-secondary');
   }
+
   Object.values(buttonEfectivo.classList).includes('btn-success')
     ? (buttonEfectivo.classList.remove('btn-success'),
       buttonEfectivo.classList.add('btn-secondary'))
@@ -169,7 +179,7 @@ buttonEfectivo.addEventListener('click', () => {
       (document.querySelector('.method-pay').innerHTML = `
       <div class="card card-body">
       <span>¿Con cuánto abonas?</span>
-      <input type="number" class="form-control" id="recipient-name" placeholder="Con cuánto abonas:"><br>
+      <input id="montoEfectivo" type="number" class="form-control" id="recipient-name" placeholder="Con cuánto abonas:"><br>
       </div>`));
 });
 
@@ -191,6 +201,88 @@ buttonTarjeta.addEventListener('click', () => {
       </div>`));
 });
 
+function validarDatosPersonales() {
+  return (
+    document.getElementById('Direccion').value != '' &&
+    document.getElementById('Telefono').value != '' &&
+    document.getElementById('Nombre').value != ''
+  );
+}
+
+function validarMetodoDePago() {
+  return (
+    Object.values(buttonTarjeta.classList).includes('btn-success') ||
+    Object.values(buttonEfectivo.classList).includes('btn-success')
+  );
+}
+
+function armarStringResumen() {
+  let resumenWsp = '';
+  carrito.forEach((element) => {
+    resumenWsp += element.cant + 'x' + ' ' + element.title + '\n';
+  });
+  return (resumenWsp =
+    'Hola!, ' +
+    document.getElementById('Nombre').value +
+    '. Gracias por probar mi primer página web. A continuacion veras el detalle del pedido. Si seleccionaste la opcion de tarjeta veras que el link de Mercado Pago funciona correctamente *guiño guiño*' +
+    '\n \n' +
+    'A nombre de: ' +
+    document.getElementById('Nombre').value +
+    ' \n' +
+    'Dirección: ' +
+    document.getElementById('Direccion').value +
+    '\n' +
+    '\n' +
+    'Resumen de compra: \n\n' +
+    resumenWsp +
+    '\n' +
+    document.querySelector('.itemCartTotal').innerHTML);
+}
+
+function realizarPedido() {
+  let resumen = armarStringResumen();
+  if (validarDatosPersonales() && validarMetodoDePago()) {
+    if (Object.values(buttonTarjeta.classList).includes('btn-success')) {
+      resumen +=
+        '\n' + 'Ingresá para abonar: link.mercadopago.com.ar/michaelvasquez';
+      document.querySelector(
+        '.button-realizar-pedido'
+      ).innerHTML = `<a class="btn btn-success button-realizar-pedido" href="https://wa.me/2216914437/?text=${resumen}">Realizar pedido</a>`;
+    } else {
+      if (modalBody.querySelector('#montoEfectivo').value != '') {
+        resumen +=
+          '\n\n' +
+          'Abono en efectivo con: ' +
+          '$' +
+          modalBody.querySelector('#montoEfectivo').value;
+        document.querySelector(
+          '.button-realizar-pedido'
+        ).innerHTML = `<a class="btn btn-success button-realizar-pedido" href="https://wa.me/2216914437/?text=${resumen}">Realizar pedido</a>`;
+      } else {
+        Toastify({
+          text: 'Por favor complete todos los campos!',
+          className: 'info',
+          duration: 1000,
+          style: {
+            background:
+              'linear-gradient(275deg, rgba(2,0,36,1) 0%, rgba(8,9,9,1) 0%, rgba(133,47,21,1) 60%, rgba(18,19,19,1) 98%)',
+          },
+        }).showToast();
+      }
+    }
+  } else {
+    Toastify({
+      text: 'Por favor complete todos los campos',
+      className: 'info',
+      duration: 1000,
+      style: {
+        background:
+          'linear-gradient(275deg, rgba(2,0,36,1) 0%, rgba(8,9,9,1) 0%, rgba(133,47,21,1) 60%, rgba(18,19,19,1) 98%)',
+      },
+    }).showToast();
+  }
+}
+
 window.onload = function () {
   const storage = JSON.parse(localStorage.getItem('carrito'));
   if (storage) {
@@ -199,4 +291,4 @@ window.onload = function () {
   }
 };
 
-export { addToCarritoItem, armarResumen };
+export { addToCarritoItem, armarResumen, realizarPedido };

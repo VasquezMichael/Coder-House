@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/style/styleHome.css">
 </head>
 <body>
+    
     <!-- Aqui tenemos el nav que usaremos para desplazarnos entre las opciones home, productos y carrito-->
     <header class="container-fluid">
         <ToastContainer />
@@ -66,7 +67,7 @@
                 <div class="textHero">
                     <br><h4>Hola,</h4>
                     <h2>Soy Michael.</h2><br>
-                    <h4>Programador Jr <br> y Tecnico electronico</h4>
+                    <h4>Programador<br> y Técnico electrónico</h4>
                 </div>
             </section>
 
@@ -76,7 +77,7 @@
                     </div>
                     <div class="sobreMi-text">
                         <h2>Sobre Mí</h2>
-                        <p>Soy programador Junior, me recibi de tecnico electronico en la secudaria donde adquirí, entre otras cosas, conocimientos basicos de programación. <br> Estudié hasta segundo año de Licenciatura en Sistemas en la UNLP. Actualmente decidí enfocarme en estudiar desarrollo web y formarme como Desarrollador full Stack</p>
+                        <p>Soy programador, me recibi de tecnico electronico en la secudaria donde adquirí, entre otras cosas, conocimientos basicos de programación. <br> Estudié hasta segundo año de Licenciatura en Sistemas en la UNLP. Actualmente decidí enfocarme en estudiar desarrollo web y formarme como Desarrollador full Stack</p>
                     </div>
                 </div>
             </section>
@@ -121,7 +122,7 @@
             ole="tabpanel" 
             aria-labelledby="pills-profile-tab"
         >
-            <video src="https://content.rolex.com/dam/new-watches-2020/new-submariner/videos/cover/new-submariner-video-cover.mp4" type="video/mp4" autoplay="" playsinline="" loop="true" preload="auto" class="video-prod"></video>
+        <video src="https://content.rolex.com/dam/new-watches-2020/new-submariner/videos/cover/new-submariner-video-cover.mp4" type="video/mp4" autoplay="" playsinline="" loop="true" preload="auto" class="video-prod"></video>
             <h2 class="h4 mt-5">Productos</h2>
         <!--CARTAS-->    
             <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 card-container ">
@@ -173,16 +174,15 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-  
                                         <form>
                                             <div class="mb-3">
                                                 <h5 class="modal-title text-primary" id="exampleModalLabel">Mis datos</h5>
                                                 <span >Nombre</span>
-                                                <input type="text" class="form-control" id="recipient-name" placeholder="Nombre:">
+                                                <input id="Nombre" type="text" class="form-control" id="recipient-name" placeholder="Nombre:">
                                                 <span>Direccion</span>
-                                                <input type="text" class="form-control" id="recipient-name" placeholder="Direccion:">
-                                                <span>Telefono</span>
-                                                <input type="tel" name="phone" class="form-control" id="recipient-name" placeholder="(+54)">
+                                                <input id="Direccion" type="text" class="form-control" id="recipient-name" placeholder="Direccion:">
+                                                <span >Telefono</span>
+                                                <input id="Telefono" type="tel" name="phone" class="form-control" id="recipient-name" placeholder="(+54)">
                                                 <!--Metodos de pago-->
                                                 <br>
                                                 <span>Metodo de pago</span> <br>
@@ -203,12 +203,13 @@
                                         </form>
                                         <span>Detalles de la compra</span> <br><br>
                                         <div class="resumen">
-                                            <p class="resumenCompra">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab tempora amet sed unde cum. </p>
+                                            <p class="resumenCompra"></p>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-success button-realizar-pedido">Realizar pedido</button>
+                                        <!--<button type="submit" class="btn btn-success button-realizar-pedido">Realizar pedido</button> -->
+                                        <a class="btn btn-success button-realizar-pedido">Realizar pedido</a>
                                     </div>
                                 </div>
                             </div>
