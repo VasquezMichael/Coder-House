@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/media/rolex_fav_icon_32x32.jpg" sizes="32x32" type="image/jpg">
     <title>Mk Rolex</title>
     <!-- CSS only -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
@@ -108,6 +109,7 @@
                             Mas aun trabajar con LocalStorage, esto esta al nivel de mi interes con Ajax, ya que
                             el poder almacenar informacion y que perdure en el tiempo me parece super necesario.
                         </p>
+
                     </div>
                 </div>
             </section>
@@ -164,63 +166,77 @@
                 <div>
                     <div class="col d-flex justify-content-end">
                         <!--Lo siguiente se ejecutara cada vez que apretemos el boton comprar--> 
-                        <button type="button" class="btn btn-success button-buy" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Comprar</button>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title text-primary" id="exampleModalLabel">Confirmacion del pedido</h4>
-                                        
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="mb-3">
-                                                <h5 class="modal-title text-primary" id="exampleModalLabel">Mis datos</h5>
-                                                <span >Nombre</span>
-                                                <input id="Nombre" type="text" class="form-control" id="recipient-name" placeholder="Nombre:">
-                                                <span>Direccion</span>
-                                                <input id="Direccion" type="text" class="form-control" id="recipient-name" placeholder="Direccion:">
-                                                <span >Telefono</span>
-                                                <input id="Telefono" type="tel" name="phone" class="form-control" id="recipient-name" placeholder="(+54)">
-                                                <!--Metodos de pago-->
-                                                <br>
-                                                <span>Metodo de pago</span> <br>
-                                                <div class="container-pay">    
-                                                    <button type="button" class="btn btn-secondary button-pay-efectivo">Efectivo</button>
-                                                    <button type="button" class="btn btn-secondary button-pay-tarjeta">Tarjeta</button>    
-                                                </div>
-                                                
-                                                <div class="method-pay">
-                                                    
-                                                </div>
-
+                        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-primary" id="exampleModalLabel">Confirmacion del pedido</h4>
+                                    
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <h5 class="modal-title text-primary" id="exampleModalLabel">Mis datos</h5>
+                                            <span >Nombre</span>
+                                            <input id="Nombre" type="text" class="form-control" id="recipient-name" placeholder="Nombre:">
+                                            <span>Direccion</span>
+                                            <input id="Direccion" type="text" class="form-control" id="recipient-name" placeholder="Direccion:">
+                                            <span >Telefono</span>
+                                            <input id="Telefono" type="tel" name="phone" class="form-control" id="recipient-name" placeholder="(+54)">
+                                            <!--Metodos de pago-->
+                                            <br>
+                                            <span>Metodo de pago</span> <br>
+                                            <div class="container-pay">    
+                                                <button type="button" class="btn btn-secondary button-pay-efectivo">Efectivo</button>
+                                                <button type="button" class="btn btn-secondary button-pay-tarjeta">Tarjeta</button>    
                                             </div>
-                                            <div class="mb-3">
-                                                <label for="message-text" class="col-form-label">¿Queres aclarar algo?</label>
-                                                <textarea class="form-control" id="message-text"></textarea>
+                                            
+                                            <div class="method-pay">
+                
                                             </div>
-                                        </form>
-                                        <span>Detalles de la compra</span> <br><br>
-                                        <div class="resumen">
-                                            <p class="resumenCompra"></p>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <!--<button type="submit" class="btn btn-success button-realizar-pedido">Realizar pedido</button> -->
-                                        <a class="btn btn-success button-realizar-pedido">Realizar pedido</a>
+                                        <div class="mb-3">
+                                            <label for="message-text" class="col-form-label" >¿Queres aclarar algo?</label>
+                                            <textarea class="form-control" id="message-text"></textarea>
+                                        </div>
+                                    </form>
+                                    <span>Detalles de la compra</span> <br><br>
+                                    <div class="resumen">
+                                        <p class="resumenCompra"></p>
                                     </div>
                                 </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-success button-realizar-pedido" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" >Siguiente</button>
+                                </div>
+                              </div>
                             </div>
-                        </div>
+                          </div>
+                
+                          <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalToggleLabel2">¡Ya casi estamos!</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  Por favor confirme su pedido!
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-success button-confirmar-pedido">Confirmar pedido</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                
+                
+                        <a class="btn btn-success button-buy" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Realizar pedido</a>
             
                     </div>
                 </div>
             </div>
           </div>
-
-
         </div>
     </div>
 

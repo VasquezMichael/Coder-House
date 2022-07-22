@@ -79,7 +79,6 @@ function renderCarrito() {
 function precioTotal() {
   let total = 0;
   const itemCartTotal = document.querySelector('.itemCartTotal');
-  console.log(itemCartTotal);
   carrito.forEach((element) => {
     const precio = parseInt(element.price.replace('$', ''));
     total = total + precio * element.cant;
@@ -146,14 +145,6 @@ const armarResumen = () => {
   const mostrarResumen = modalBody.querySelector('.resumen');
 
   mostrarResumen.innerHTML = '';
-  /* carrito.forEach((element) => {
-    const p = document.createElement('p');
-    const resumen = `
-        <p class="resumenCompra">${element.cant}x ${element.title}  </p>
-    `;
-    p.innerHTML = resumen;
-    mostrarResumen.appendChild(p);
-  });*/
   armarElementsResumen(mostrarResumen);
   const montoTotal = document.createElement('p');
   montoTotal.innerHTML =
@@ -164,7 +155,7 @@ const armarResumen = () => {
 //Manejador de eventos para los botones de Efectivo y Tarjeta
 
 buttonEfectivo.addEventListener('click', () => {
-  realizarPedido();
+  console.log('aca');
   if (Object.values(buttonTarjeta.classList).includes('btn-success')) {
     buttonTarjeta.classList.remove('btn-success');
     buttonTarjeta.classList.add('btn-secondary');
@@ -187,6 +178,7 @@ buttonTarjeta.addEventListener('click', () => {
   if (Object.values(buttonEfectivo.classList).includes('btn-success')) {
     buttonEfectivo.classList.remove('btn-success');
     buttonEfectivo.classList.add('btn-secondary');
+    console.log('acatambien');
   }
 
   Object.values(buttonTarjeta.classList).includes('btn-success')
@@ -219,23 +211,26 @@ function validarMetodoDePago() {
 function armarStringResumen() {
   let resumenWsp = '';
   carrito.forEach((element) => {
-    resumenWsp += element.cant + 'x' + ' ' + element.title + '\n';
+    resumenWsp += element.cant + 'x' + ' ' + element.title + '%0A';
   });
   return (resumenWsp =
     'Hola!, ' +
     document.getElementById('Nombre').value +
-    '. Gracias por probar mi primer página web. A continuacion veras el detalle del pedido. Si seleccionaste la opcion de tarjeta veras que el link de Mercado Pago funciona correctamente *guiño guiño*' +
-    '\n \n' +
+    '. Gracias por probar Mk Rolex, mi primer página web. A continuacion veras el detalle del pedido. Si seleccionaste la opción de tarjeta veras que el link de Mercado Pago funciona correctamente *guiño guiño*' +
+    '%0A %0A' +
     'A nombre de: ' +
     document.getElementById('Nombre').value +
-    ' \n' +
+    ' %0A' +
     'Dirección: ' +
     document.getElementById('Direccion').value +
-    '\n' +
-    '\n' +
-    'Resumen de compra: \n\n' +
+    '%0A' +
+    '%0A' +
+    'Resumen de compra: %0A %0A' +
     resumenWsp +
-    '\n' +
+    '%0A' +
+    'Aclaraciones: %0A' +
+    document.querySelector('#message-text').value +
+    '%0A %0A' +
     document.querySelector('.itemCartTotal').innerHTML);
 }
 
@@ -244,25 +239,26 @@ function realizarPedido() {
   if (validarDatosPersonales() && validarMetodoDePago()) {
     if (Object.values(buttonTarjeta.classList).includes('btn-success')) {
       resumen +=
-        '\n' + 'Ingresá para abonar: link.mercadopago.com.ar/michaelvasquez';
+        '%0A' +
+        'Ingresá para abonar(Tranqui, te pide ingresar el monto y confirmar gg): link.mercadopago.com.ar/michaelvasquez';
       document.querySelector(
-        '.button-realizar-pedido'
-      ).innerHTML = `<a class="btn btn-success button-realizar-pedido" href="https://wa.me/2216914437/?text=${resumen}">Realizar pedido</a>`;
+        '.button-confirmar-pedido'
+      ).innerHTML = `<a class="btn btn-success button-confirmar-pedido" href="https://wa.me/2216914437/?text=${resumen}">Confirmar pedido</a>`;
     } else {
       if (modalBody.querySelector('#montoEfectivo').value != '') {
         resumen +=
-          '\n\n' +
+          '%0A' +
           'Abono en efectivo con: ' +
           '$' +
           modalBody.querySelector('#montoEfectivo').value;
         document.querySelector(
-          '.button-realizar-pedido'
-        ).innerHTML = `<a class="btn btn-success button-realizar-pedido" href="https://wa.me/2216914437/?text=${resumen}">Realizar pedido</a>`;
+          '.button-confirmar-pedido'
+        ).innerHTML = `<a class="btn btn-success button-confirmar-pedido" href="https://wa.me/2216914437/?text=${resumen}">Confirmar pedido</a>`;
       } else {
         Toastify({
           text: 'Por favor complete todos los campos!',
           className: 'info',
-          duration: 1000,
+          duration: 1500,
           style: {
             background:
               'linear-gradient(275deg, rgba(2,0,36,1) 0%, rgba(8,9,9,1) 0%, rgba(133,47,21,1) 60%, rgba(18,19,19,1) 98%)',
@@ -274,7 +270,7 @@ function realizarPedido() {
     Toastify({
       text: 'Por favor complete todos los campos',
       className: 'info',
-      duration: 1000,
+      duration: 1500,
       style: {
         background:
           'linear-gradient(275deg, rgba(2,0,36,1) 0%, rgba(8,9,9,1) 0%, rgba(133,47,21,1) 60%, rgba(18,19,19,1) 98%)',

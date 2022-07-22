@@ -10,17 +10,6 @@ header{
     opacity: 0.95;
     
 }
-
-/*.alert{
-    z-index: 100;
-    position: sticky;
-    top: 0px;
-}
-
-.addAlert , .removeAlert{
-    display: none;
-}*/
-
 textarea{
     max-height: 80px;
     resize: none;
