@@ -1,19 +1,46 @@
 import React from 'react'
-import { HStack, Flex, Spacer, Link, Text, Box, Center } from '@chakra-ui/react'
-import ('https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap');
+import { HStack, Flex, Spacer, Link, Text, Box, Center} from '@chakra-ui/react'
+import { GiGooeyDaemon } from "react-icons/gi";
+import { FaBars } from "react-icons/fa";
+import { IconContext } from "react-icons";
+import {Container, LogoContainer, Wrapper, Menu, MenuItem, MenuItemLink, MobileIcon } from './Navbar-elements.js'
 const Navbar = () => {
   return (
-    <Flex bg='black' color="white">
-        <Box p={1} ml={2}>
-            <Text fontSize='35px' fontFamily='Pacifico, cursive' color="violet">DripCode</Text>
-        </Box>
-        <Spacer/>
-        <Center mr={2} >
-            <Link p={4}>Home</Link>
-            <Link p={4}>About</Link>
-            <Link p={4}>Shop</Link>
-        </Center>
-    </Flex>
+    <Container>
+        <Wrapper>
+            <IconContext.Provider value = {{style: {fontSize: "2.2em"}}}>
+            <LogoContainer>
+                <GiGooeyDaemon/>    
+                <p>DripCode</p>
+            </LogoContainer>
+            <MobileIcon>
+                <FaBars/>
+            </MobileIcon>
+            <Menu>
+                <MenuItem>
+                    <MenuItemLink>
+                        Home
+                    </MenuItemLink>
+                </MenuItem>
+                <MenuItem>
+                    <MenuItemLink>
+                        About 
+                    </MenuItemLink>
+                </MenuItem>
+                <MenuItem>
+                    <MenuItemLink>
+                        Shop
+                    </MenuItemLink>
+                </MenuItem>
+                <MenuItem>
+                    <MenuItemLink>
+                        Carrito
+                    </MenuItemLink>
+                </MenuItem>
+            </Menu>
+            </IconContext.Provider>
+        </Wrapper>
+    </Container>
   )
 }
 
