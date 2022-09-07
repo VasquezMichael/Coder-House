@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { HStack, Flex, Spacer, Link, Text, Box, Center} from '@chakra-ui/react'
 import { GiGooeyDaemon } from "react-icons/gi";
-import { FaBars } from "react-icons/fa";
+import { 
+    FaBars,
+    FaHome,
+    FaUserAlt,
+    FaTshirt,
+    FaShoppingCart,
+    FaTimes
+ } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import {Container, LogoContainer, Wrapper, Menu, MenuItem, MenuItemLink, MobileIcon } from './Navbar-elements.js'
 const Navbar = () => {
+
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
   return (
     <Container>
         <Wrapper>
@@ -13,28 +22,42 @@ const Navbar = () => {
                 <GiGooeyDaemon/>    
                 <p>DripCode</p>
             </LogoContainer>
-            <MobileIcon>
-                <FaBars/>
+            <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                {
+                    showMobileMenu ? <FaTimes/> : <FaBars/>
+                }
             </MobileIcon>
-            <Menu>
+            <Menu open = {showMobileMenu}>
                 <MenuItem>
-                    <MenuItemLink>
-                        Home
+                    <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                        <div>
+                            <FaHome/>
+                            Home
+                        </div>
                     </MenuItemLink>
                 </MenuItem>
                 <MenuItem>
-                    <MenuItemLink>
-                        About 
+                    <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                        <div>
+                            <FaUserAlt/>
+                            About
+                        </div> 
                     </MenuItemLink>
                 </MenuItem>
                 <MenuItem>
-                    <MenuItemLink>
-                        Shop
+                    <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                        <div>
+                            <FaTshirt/>
+                            Shop
+                        </div> 
                     </MenuItemLink>
                 </MenuItem>
                 <MenuItem>
-                    <MenuItemLink>
-                        Carrito
+                    <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                        <div>
+                            <FaShoppingCart/>
+                            Carrito
+                        </div> 
                     </MenuItemLink>
                 </MenuItem>
             </Menu>

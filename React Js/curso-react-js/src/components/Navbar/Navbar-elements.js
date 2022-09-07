@@ -1,5 +1,6 @@
+
 import styled from "styled-components";
-import ('https://fonts.googleapis.com/css2?family=Courgette&family=Kaushan+Script&display=swap');
+
 
 export const Container = styled.div`
     background-color: #545453;
@@ -37,7 +38,7 @@ export const LogoContainer =  styled.div`
     align-items: center;
     margin-left: .1em;
     height: 100%;
-
+    
     p{
         color: #F3F17F;
         font-size: 2.2rem;
@@ -48,7 +49,9 @@ export const LogoContainer =  styled.div`
         color: #9B42C7;
         margin-right: 5px;
     }
-
+    @media screen and (max-width: 960px) {
+        margin-left: 10px;
+    }
     
 `;
 
@@ -67,13 +70,14 @@ export const Menu = styled.ul`
         position: absolute;
         background-color: #545453;
         top: 50px;
-        right: 0;
+        width: 100%;
+        height: 90vh;
+        right: ${({open}) => (open ? "0" : "100%")};
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        height: 90vh;
         transition: .5s all ease;
+        margin: auto;
     }
 `;
 
@@ -112,8 +116,32 @@ export const MenuItemLink = styled.a`
         background-color: #F3F17F;
     }
 
+    div{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        svg{
+            display: none;
+        }
+    }
+    
     @media screen and (max-width: 960px){
         width: 100%;
+
+        div{
+            justify-content: center;
+            align-items: center;
+            svg{
+                display: flex;
+                margin-right: 15px;
+                width: 40px;
+            }
+        }
+
+
     }
 
 
@@ -130,7 +158,7 @@ export const MobileIcon = styled.div`
 
         svg{
             color: #9B42C7;
-            margin-right: 5px;
+            margin-right: 10px;
         }
     }
 
