@@ -11,13 +11,7 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-   /* width: 100%;
-    max-width: 1300px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    flex-wrap: wrap;*/
+
     display: flex;
     height: 100%;
     width: 100%;
@@ -30,15 +24,12 @@ export const Wrapper = styled.div`
 `;
 
 export const LogoContainer =  styled.div`
-   /* display: flex;
-    align-items: center;
-    margin-left: 0.5rem;
-    font-size: 1.5rem;*/
+
     display: flex;
     align-items: center;
     margin-left: .1em;
     height: 100%;
-    
+    padding: 0 .3%;
     p{
         color: #F3F17F;
         font-size: 2.2rem;
@@ -56,20 +47,18 @@ export const LogoContainer =  styled.div`
 `;
 
 export const Menu = styled.ul`
-   /* height: 100%;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;*/
+
     display: flex;
     justify-content: space-between;
     list-style: none;
     align-items: center;
     color: #fff;
-
+    padding: 0 1%;
     @media screen and (max-width: 960px) {
         position: absolute;
         background-color: #545453;
-        top: 50px;
+
+        top: 70px;
         width: 100%;
         height: 90vh;
         right: ${({open}) => (open ? "0" : "100%")};
@@ -83,7 +72,7 @@ export const Menu = styled.ul`
 
 export const MenuItem = styled.li`
     height: 100%;
-
+   
     @media screen and (max-width: 960px)  {
         display: flex;
         width: 100%;
@@ -94,13 +83,7 @@ export const MenuItem = styled.li`
 `;
 
 export const MenuItemLink = styled.a`
-   /* display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 0.5rem 2.5rem;
-    font-size: 1.5rem;
-    font-weight: 300;*/
+
     display: flex;
     justify-content: center;
     align-items: center;

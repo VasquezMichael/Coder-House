@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
-import { HStack, Flex, Spacer, Link, Text, Box, Center} from '@chakra-ui/react'
+//import { HStack, Flex, Spacer, Link, Text, Box, Center} from '@chakra-ui/react'
 import { GiGooeyDaemon } from "react-icons/gi";
+
+import { IconContext } from "react-icons";
+import {Container, LogoContainer, Wrapper, Menu, MenuItem, MenuItemLink, MobileIcon } from './Navbar-elements.js'
+import { CartWidget } from '../CartWidget/index.jsx';
+import { CarritoLink } from '../CartWidget/CartWidgetStyle.js';
+
 import { 
     FaBars,
     FaHome,
     FaUserAlt,
     FaTshirt,
-    FaShoppingCart,
-    FaTimes
+    FaTimes,
  } from "react-icons/fa";
-import { IconContext } from "react-icons";
-import {Container, LogoContainer, Wrapper, Menu, MenuItem, MenuItemLink, MobileIcon } from './Navbar-elements.js'
+ 
 const Navbar = () => {
 
     const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -53,12 +57,9 @@ const Navbar = () => {
                     </MenuItemLink>
                 </MenuItem>
                 <MenuItem>
-                    <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                        <div>
-                            <FaShoppingCart/>
-                            Carrito
-                        </div> 
-                    </MenuItemLink>
+                    <CarritoLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                        <CartWidget/>
+                    </CarritoLink>
                 </MenuItem>
             </Menu>
             </IconContext.Provider>
